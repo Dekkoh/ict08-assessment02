@@ -6,7 +6,7 @@
 
 using namespace std;
 
-class Book
+class BookManager
 {
 public:
     int setBookDetails(string isbn, string author = "", string title = "", optional<bool> availability = nullopt);
@@ -16,4 +16,5 @@ public:
 
 private:
     vector<Book> books;
+    int findBookIdxByISBN(string isbn);
 };
