@@ -26,25 +26,6 @@ bool isInteger(const string str)
     return true;
 }
 
-bool isBoolean(const string str)
-{
-
-    if (str.length() != 1)
-    {
-        return false;
-    }
-
-    cout << str;
-    cout << str.compare("0");
-
-    if (str.compare("0") == 0 || str.compare("1") == 0)
-    {
-        return false;
-    }
-
-    return true;
-}
-
 vector<Book> initBooks()
 {
     Book book1("Harry Potter and the Sorcerer's Stone", "Rowling, J. K.", "9781338878929", true);
@@ -123,22 +104,13 @@ string readAuthor()
 
 bool readAvailability()
 {
-    string availability;
+    int availability;
 
     cout << "Enter book Availability: ";
     cin >> availability;
     cout << endl;
 
-    while (!isBoolean(availability))
-    {
-        cout << "Invalid availability. Please use 1 for available or 0 for not available" << endl;
-
-        cout << "Enter book Availability: ";
-        cin >> availability;
-        cout << endl;
-    }
-
-    return (bool)availability[0];
+    return availability;
 }
 
 void controlLoop(BookManager bookManager)
@@ -163,6 +135,7 @@ void controlLoop(BookManager bookManager)
             title = readTitle();
             author = readAuthor();
             availability = readAvailability();
+            cout << availability;
             bookManager.setBookDetails(isbn, title, author, availability);
             break;
         case DISPLAY_BOOK_DETAILS:
