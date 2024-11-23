@@ -38,7 +38,7 @@ int BookManager::findBookIdxByISBN(string isbn)
     return bookIdx;
 };
 
-int BookManager::setBookDetails(string isbn, string author, string title, int availability)
+int BookManager::setBookDetails(string isbn, string title, string author, int availability)
 {
     int bookIdx = this->findBookIdxByISBN(isbn);
 
