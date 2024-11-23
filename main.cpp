@@ -135,7 +135,6 @@ void controlLoop(BookManager bookManager)
             title = readTitle();
             author = readAuthor();
             availability = readAvailability();
-            cout << availability;
             bookManager.setBookDetails(isbn, title, author, availability);
             break;
         case DISPLAY_BOOK_DETAILS:
